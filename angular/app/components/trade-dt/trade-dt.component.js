@@ -5,9 +5,9 @@ class TradeDtController {
     this.$state = $state
 
       //let Permissions = this.API.service('dtinforms', this.API.all('informs'))
-      let Permissions = this.API.service('dtinforms', this.API.all('informs'))
+      let Dtinforms = this.API.service('dtinforms', this.API.all('informs'))
 
-      Permissions.getList()
+      Dtinforms.getList()
           .then((response) => {
           let dataSet = response.plain()
 

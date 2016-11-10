@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Inform;
 use Illuminate\Http\Request;
+use Input;
 
 class InformController extends Controller
 {
@@ -13,8 +14,19 @@ class InformController extends Controller
         return response()->success(compact('dtinforms'));
     }
 
-    public function getLists(){
-        $informs = Inform::all();
-        return response()->success(compact('informs'));
+    /**
+     * Create new user role.
+     *
+     * @return JSON
+     */
+    public function postDtinforms()
+    {
+        $dtinforms = Inform::create([
+            'title' => Input::get('title'),
+            'content' => Input::get('content'),
+            'columnId' => 1,
+        ]);
+
+        return response()->success(compact('dtinforms'));
     }
 }

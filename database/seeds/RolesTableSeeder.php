@@ -111,7 +111,7 @@ class RolesTableSeeder extends Seeder
             ],[
                 'id' => 13,
                 'name' => 'traderules Admin',
-                'slug' => 'admin.traderules',
+                'slug' => 'admin.traderule',
                 'description' => 'Can manage traderules',
                 'level' => '1',
                 'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
