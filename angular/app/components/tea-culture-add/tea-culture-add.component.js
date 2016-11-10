@@ -1,4 +1,4 @@
-class TradeDtAddController {
+class TeaCultureAddController {
   constructor (API, $state, $stateParams) {
     'ngInject'
 
@@ -37,9 +37,9 @@ class TradeDtAddController {
   $onInit () {}
 }
 
-export const TradeDtAddComponent = {
-  templateUrl: './views/app/components/trade-dt-add/trade-dt-add.component.html',
-  controller: TradeDtAddController,
+export const TeaCultureAddComponent = {
+  templateUrl: './views/app/components/tea-culture-add/tea-culture-add.component.html',
+  controller: TeaCultureAddController,
   controllerAs: 'vm',
   bindings: {}
 }

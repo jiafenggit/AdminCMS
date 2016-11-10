@@ -37,9 +37,9 @@ class TradeDtEditController {
   $onInit () {}
 }
 
-export const TradeDtAddComponent = {
-  templateUrl: './views/app/components/trade-dt-add/trade-dt-add.component.html',
-  controller: TradeDtAddController,
+export const TradeDtEditComponent = {
+  templateUrl: './views/app/components/trade-dt-edit/trade-dt-edit.component.html',
+  controller: TradeDtEditController,
   controllerAs: 'vm',
   bindings: {}
 }
