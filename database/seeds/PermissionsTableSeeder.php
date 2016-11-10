@@ -30,6 +30,60 @@ class PermissionsTableSeeder extends Seeder
                 'slug' => 'manage.permissions',
                 'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
                 'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
+            ], [
+                'id' => 4,
+                'name' => 'Manage informs',
+                'slug' => 'manage.informs',
+                'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
+                'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
+            ], [
+                'id' => 5,
+                'name' => 'Manage dtinforms',
+                'slug' => 'manage.dtinforms',
+                'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
+                'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
+            ], [
+                'id' => 6,
+                'name' => 'Manage teainforms',
+                'slug' => 'manage.teainforms',
+                'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
+                'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
+            ],[
+                'id' => 7,
+                'name' => 'Manage industryinforms',
+                'slug' => 'manage.industryinforms',
+                'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
+                'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
+            ], [
+                'id' => 8,
+                'name' => 'Manage teaculture',
+                'slug' => 'manage.teaculture',
+                'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
+                'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
+            ], [
+                'id' => 9,
+                'name' => 'Manage teaknowledge',
+                'slug' => 'manage.teaknowledge',
+                'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
+                'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
+            ], [
+                'id' => 10,
+                'name' => 'Manage collectiontea',
+                'slug' => 'manage.collectiontea',
+                'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
+                'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
+            ],[
+                'id' => 11,
+                'name' => 'Manage announcement',
+                'slug' => 'manage.announcement',
+                'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
+                'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
+            ],[
+                'id' => 12,
+                'name' => 'Manage traderules',
+                'slug' => 'manage.traderules',
+                'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
+                'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
             ],
         ]);
     }
