@@ -4,28 +4,28 @@ class TeaCultureController {
     this.API = API
     this.$state = $state
 
-      //let Permissions = this.API.service('dtinforms', this.API.all('informs'))
-      let Permissions = this.API.service('dtinforms', this.API.all('informs'))
+    //let Permissions = this.API.service('dtinforms', this.API.all('informs'))
+    let Permissions = this.API.service('dtinforms', this.API.all('informs'))
 
-      Permissions.getList()
-          .then((response) => {
-          let dataSet = response.plain()
+    Permissions.getList()
+        .then((response) => {
+      let dataSet = response.plain()
 
-          this.dtOptions = DTOptionsBuilder.newOptions()
-          .withOption('data', dataSet)
-          .withOption('createdRow', createdRow)
-          .withOption('responsive', true)
-          .withBootstrap()
+      this.dtOptions = DTOptionsBuilder.newOptions()
+        .withOption('data', dataSet)
+        .withOption('createdRow', createdRow)
+        .withOption('responsive', true)
+        .withBootstrap()
 
-        this.dtColumns = [
-          DTColumnBuilder.newColumn('id').withTitle('ID'),
-          DTColumnBuilder.newColumn('title').withTitle('Title'),
-          DTColumnBuilder.newColumn('content').withTitle('Content'),
-          DTColumnBuilder.newColumn(null).withTitle('Actions').notSortable()
-            .renderWith(actionsHtml)
-        ]
+    this.dtColumns = [
+      DTColumnBuilder.newColumn('id').withTitle('ID'),
+      DTColumnBuilder.newColumn('title').withTitle('Title'),
+      DTColumnBuilder.newColumn('content').withTitle('Content'),
+      DTColumnBuilder.newColumn(null).withTitle('Actions').notSortable()
+          .renderWith(actionsHtml)
+    ]
 
-      this.displayTable = true
+    this.displayTable = true
   })
 
     let createdRow = (row) => {
@@ -82,4 +82,4 @@ export const TeaCultureComponent = {
   controller: TeaCultureController,
   controllerAs: 'vm',
   bindings: {}
-}
+};
