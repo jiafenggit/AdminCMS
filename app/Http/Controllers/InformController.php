@@ -15,7 +15,7 @@ class InformController extends Controller
     }
 
     /**
-     * Create new user role.
+     * Create new dt inform.
      *
      * @return JSON
      */

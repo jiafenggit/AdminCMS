@@ -2,10 +2,12 @@ class TradeDtAddController {
   constructor (API, $state, $stateParams, $scope) {
     'ngInject'
     console.log($scope);
-    $scope.vm.content = "<h3>在这里输入内容</h3>"
+    // $scope.vm.content = "<h3>在这里输入内容</h3>"
     $scope.froalaOptions = {
+      placeholder: "Edit Me",
       heightMin: 300,
-      imageUploadURL: "uploadImgEditor"
+      language: 'zh_cn',
+      imageUploadURL: "upload/imgEditor"
     }
     // $scope.froalaOptions = {
     //   toolbarButtons : ["bold", "italic", "underline", "|", "align", "formatOL", "formatUL"],

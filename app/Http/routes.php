@@ -41,12 +41,13 @@ $api->group(['middleware' => ['api', 'api.auth']], function ($api) {
 $api->group(['middleware' => ['api', 'api.auth', 'role:admin.super|admin.user|admin.inform|admin.dtinform']], function ($api) {
     $api->controller('users', 'UserController');
     $api->controller('informs', 'InformController');
+//    $api->controller('uploads', 'UploadController');//@imgEditor
 });
 
 
 
-//$api->group(['middleware' => ['api']], function ($api) {
-//    //, 'api.news' , 'role:admin.super|admin.inform'
-//    $api->get('informs/dtlists', 'InformController@getLists');
-////    $api->controller('news', 'NewController');
-//});
+Route::group(['middleware' => ['upload']], function () {
+    //upload
+    Route::post('/upload/imgEditor', 'UploadController@imgEditor');
+//    http://admin.zdmc181.dev/upload/ImgEditor
+});
