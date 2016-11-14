@@ -21,12 +21,12 @@ class InformController extends Controller
      */
     public function postDtinforms()
     {
-        $dtinforms = Inform::create([
+        $dtinform = Inform::create([
             'title' => Input::get('title'),
             'content' => Input::get('content'),
-            'columnId' => 1,
+            'columnId' => Input::get('columnId'),
         ]);
 
-        return response()->success(compact('dtinforms'));
+        return response()->success(compact('dtinform'));
     }
 }
