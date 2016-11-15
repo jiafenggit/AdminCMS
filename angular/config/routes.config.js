@@ -483,41 +483,41 @@ export function RoutesConfig ($stateProvider, $urlRouterProvider) {
         teaknowledgeId: null
       }
     })
-    .state('app.collectionteas', {
-      url: '/collection-tea',
+    .state('app.teacollections', {
+      url: '/tea-collection',
       data: {
         auth: true
       },
       views: {
         'main@app': {
-          template: '<collection-tea></collection-tea>'
+          template: '<tea-collection></tea-collection>'
         }
       }
     })
-    .state('app.collectionteaadd', {
-      url: '/collection-tea-add',
+    .state('app.teacollectionadd', {
+      url: '/tea-collection-add',
       data: {
         auth: true
       },
       views: {
         'main@app': {
-          template: '<collection-tea-add></collection-tea-add>'
+          template: '<tea-collection-add></tea-collection-add>'
         }
       }
     })
-    .state('app.collectionteaedit', {
-      url: '/collection-tea-edit/:teaId',
+    .state('app.teacollectionedit', {
+      url: '/tea-collection-edit/:teacollectionId',
       data: {
         auth: true
       },
       views: {
         'main@app': {
-          template: '<collection-tea-edit></collection-tea-edit>'
+          template: '<tea-collection-edit></tea-collection-edit>'
         }
       },
       params: {
         alerts: null,
-        tradeId: null
+        teacollectionId: null
       }
     })
 }

@@ -59,7 +59,11 @@ $api->group(['middleware' => ['api', 'api.auth', 'role:admin.inform|admin.dtinfo
     $api->put('/informs/teacultures-show', 'InformController@putTeaCulturesShow');
     $api->delete('/informs/teacultures/{teacultureId}', 'InformController@deleteTeaCultures');
 
-
+    $api->get('/informs/teacollections', 'InformController@getTeaCollections');
+    $api->post('/informs/teacollections', 'InformController@postTeaCollections');
+    $api->get('/informs/teacollections-show/{teacollectionId}', 'InformController@getTeaCollectionsShow');
+    $api->put('/informs/teacollections-show', 'InformController@putTeaCollectionsShow');
+    $api->delete('/informs/teacollections/{teacollectionId}', 'InformController@deleteTeaCollections');
 
 });
 

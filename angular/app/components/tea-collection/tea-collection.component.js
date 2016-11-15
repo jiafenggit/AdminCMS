@@ -6,7 +6,7 @@ class TeaCollectionController {
 
     // let TeaCollections = this.API.service('teakns', this.API.all('users'))
     let TeaCollections = this.API.service('teacollections', this.API.all('informs'))
-
+console.log(TeaCollections);
     TeaCollections.getList()
         .then((response) => {
       let dataSet = response.plain()

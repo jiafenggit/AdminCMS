@@ -30,7 +30,7 @@ class TeaCollectionEditController {
       let $state = this.$state
       this.teacollection.put()
           .then(() => {
-        let alert = { type: 'success', 'title': 'Success!', msg: '一条茶知识修改好了.' }
+        let alert = { type: 'success', 'title': 'Success!', msg: '一条藏品展示修改好了.' }
         $state.go($state.current, { alerts: alert})
     }, (response) => {
         let alert = { type: 'error', 'title': 'Error!', msg: response.data.message }

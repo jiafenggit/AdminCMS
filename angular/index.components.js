@@ -36,6 +36,9 @@ import { TeaCultureEditComponent } from './app/components/tea-culture-edit/tea-c
 import { TeaKnowledgeComponent } from './app/components/tea-knowledge/tea-knowledge.component'
 import { TeaKnowledgeAddComponent } from './app/components/tea-knowledge-add/tea-knowledge-add.component'
 import { TeaKnowledgeEditComponent } from './app/components/tea-knowledge-edit/tea-knowledge-edit.component'
+import { TeaCollectionComponent } from './app/components/tea-collection/tea-collection.component'
+import { TeaCollectionAddComponent } from './app/components/tea-collection-add/tea-collection-add.component'
+import { TeaCollectionEditComponent } from './app/components/tea-collection-edit/tea-collection-edit.component'
 
 angular.module('app.components')
     .component('tablesSimple', TablesSimpleComponent)
@@ -77,3 +80,6 @@ angular.module('app.components')
     .component('teaKnowledge', TeaKnowledgeComponent)
     .component('teaKnowledgeAdd', TeaKnowledgeAddComponent)
     .component('teaKnowledgeEdit', TeaKnowledgeEditComponent)
+    .component('teaCollection', TeaCollectionComponent)
+    .component('teaCollectionAdd', TeaCollectionAddComponent)
+    .component('teaCollectionEdit', TeaCollectionEditComponent)

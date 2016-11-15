@@ -27,7 +27,7 @@ class TeaCollectionAddController {
         'title': this.title,
         'content': this.content
       }).then(() => {
-        let alert = { type: 'success', 'title': 'Success!', msg: '成功添加了一条茶知识.' }
+        let alert = { type: 'success', 'title': 'Success!', msg: '成功添加了一条藏品展示.' }
         // $state.go($state.current, { alerts: alert})
         this.alerts.push(alert);
     }, (response) => {

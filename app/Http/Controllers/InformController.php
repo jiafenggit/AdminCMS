@@ -9,6 +9,25 @@ use Input;
 
 class InformController extends Controller
 {
+    /**
+     * columnId
+     * 1 = dtinform 交易动态
+     * 2 = teaknowledge 茶知识
+     * 3 =
+     * 4 =
+     * 5 =
+     *
+     *
+     */
+    //交易动态
+    const dtinform = 1;
+    //茶知识
+    const teaknowledge = 2;
+    //茶文化
+    const teaculture = 3;
+    //茶藏品
+    const teacollection = 4;
+
     /* 交易动态 start */
     /**
      * Get all Dt informs.
@@ -16,7 +35,7 @@ class InformController extends Controller
      * @return JSON
      */
     public function getDtinforms(){
-        $dtinforms = Inform::where('columnId', '=', 1)->get();
+        $dtinforms = Inform::where('columnId', '=', self::dtinform)->get();
         return response()->success(compact('dtinforms'));
     }
 
@@ -30,7 +49,7 @@ class InformController extends Controller
         $dtinform = Inform::create([
             'title' => Input::get('title'),
             'content' => Input::get('content'),
-            'columnId' => 1
+            'columnId' => self::dtinform
         ]);
 
         return response()->success(compact('dtinform'));
@@ -89,7 +108,7 @@ class InformController extends Controller
      * @return JSON
      */
     public function getTeaKnowledges(){
-        $teaknowledges = Inform::where('columnId', '=', 2)->get();
+        $teaknowledges = Inform::where('columnId', '=', self::teaknowledge)->get();
         return response()->success(compact('teaknowledges'));
     }
 
@@ -103,7 +122,7 @@ class InformController extends Controller
         $teaknowledge = Inform::create([
             'title' => Input::get('title'),
             'content' => Input::get('content'),
-            'columnId' => 2
+            'columnId' => self::teaknowledge
         ]);
 
         return response()->success(compact('teaknowledge'));
@@ -160,7 +179,7 @@ class InformController extends Controller
      * @return JSON
      */
     public function getTeaCultures(){
-        $teacultures = Inform::where('columnId', '=', 3)->get();
+        $teacultures = Inform::where('columnId', '=', self::teaculture)->get();
         return response()->success(compact('teacultures'));
     }
 
@@ -174,7 +193,7 @@ class InformController extends Controller
         $teaculture = Inform::create([
             'title' => Input::get('title'),
             'content' => Input::get('content'),
-            'columnId' => 3
+            'columnId' => self::teaculture
         ]);
 
         return response()->success(compact('teaculture'));
@@ -225,4 +244,76 @@ class InformController extends Controller
     }
     /* 茶文化 end */
     /* 关于茶 end */
+
+    /* 藏品展示 start */
+    /**
+     * Get all TeaCultures.
+     *
+     * @return JSON
+     */
+    public function getTeaCollections(){
+        $teacollections = Inform::where('columnId', '=', 4)->get();
+        return response()->success(compact('teacollections'));
+    }
+
+    /**
+     * Create new TeaCulture.
+     *
+     * @return JSON
+     */
+    public function postTeaCollections()
+    {
+        $teacollection = Inform::create([
+            'title' => Input::get('title'),
+            'content' => Input::get('content'),
+            'columnId' => 4
+        ]);
+
+        return response()->success(compact('teacollection'));
+    }
+
+    /**
+     * Get system TeaCulture referenced by id.
+     *
+     * @param int TeaCulture ID
+     *
+     * @return JSON
+     */
+    public function getTeaCollectionsShow($id)
+    {
+        $teacollection = Inform::find($id);
+
+        return response()->success($teacollection);
+    }
+
+    /**
+     * Update system TeaCulture.
+     *
+     * @return JSON
+     */
+    public function putTeaCollectionsShow()
+    {
+        $teacollectionForm = Input::get('data');
+        $affectedRows = Inform::where('id', '=', intval($teacollectionForm['id']))->update($teacollectionForm);
+        if($affectedRows>0){
+            return response()->success($teacollectionForm);
+        }else{
+            return response()->error($teacollectionForm);
+        }
+    }
+
+    /**
+     * Delete system TeaCulture referenced by id.
+     *
+     * @param int TeaCulture ID
+     *
+     * @return JSON
+     */
+    public function deleteTeaCollections($id)
+    {
+        Inform::destroy($id);
+
+        return response()->success('success');
+    }
+    /* 藏品展示 end */
 }
