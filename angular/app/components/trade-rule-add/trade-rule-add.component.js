@@ -1,4 +1,4 @@
-class TradeDtAddController {
+class TradeRuleAddController {
   constructor (API, $state, $stateParams, $scope) {
     'ngInject'
     $scope.vm.content = "<h3>在这里输入内容</h3>"
@@ -20,10 +20,10 @@ class TradeDtAddController {
 
   save (isValid) {
     if (isValid) {
-      let Dtinforms = this.API.service('dtinforms', this.API.all('informs'))
+      let TradeRules = this.API.service('traderules', this.API.all('informs'))
       // let $state = this.$state
 
-      Dtinforms.post({
+      TradeRules.post({
         'title': this.title,
         'content': this.content
       }).then(() => {
@@ -43,9 +43,9 @@ class TradeDtAddController {
   $onInit () {}
 }
 
-export const TradeDtAddComponent = {
-  templateUrl: './views/app/components/trade-dt-add/trade-dt-add.component.html',
-  controller: TradeDtAddController,
+export const TradeRuleAddComponent = {
+  templateUrl: './views/app/components/trade-rule-add/trade-rule-add.component.html',
+  controller: TradeRuleAddController,
   controllerAs: 'vm',
   bindings: {}
 }

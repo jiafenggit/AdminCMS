@@ -1,4 +1,4 @@
-class TradeDtEditController {
+class TradeRuleEditController {
   constructor (API, $state, $stateParams, $scope) {
     'ngInject'
 
@@ -17,18 +17,18 @@ class TradeDtEditController {
     if ($stateParams.alerts) {
       this.alerts.push($stateParams.alerts)
     }
-    let tradedtId = $stateParams.tradedtId
-    let Tradedt = API.service('dtinforms-show', API.all('informs'))
-    Tradedt.one(tradedtId).get()
+    let traderuleId = $stateParams.traderuleId
+    let TradeRule = API.service('traderules-show', API.all('informs'))
+    TradeRule.one(traderuleId).get()
         .then((response) => {
-      this.tradedt = API.copy(response)
+      this.traderule = API.copy(response)
     })
   }
 
   save (isValid) {
     if (isValid) {
       let $state = this.$state
-      this.tradedt.put()
+      this.traderule.put()
           .then(() => {
         let alert = { type: 'success', 'title': 'Success!', msg: '一条交易动态修改好了.' }
         $state.go($state.current, { alerts: alert})
@@ -44,9 +44,9 @@ class TradeDtEditController {
   $onInit () {}
 }
 
-export const TradeDtEditComponent = {
-  templateUrl: './views/app/components/trade-dt-edit/trade-dt-edit.component.html',
-  controller: TradeDtEditController,
+export const TradeRuleEditComponent = {
+  templateUrl: './views/app/components/trade-rule-edit/trade-rule-edit.component.html',
+  controller: TradeRuleEditController,
   controllerAs: 'vm',
   bindings: {}
 }

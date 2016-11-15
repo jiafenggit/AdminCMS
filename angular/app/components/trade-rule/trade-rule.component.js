@@ -1,12 +1,12 @@
-class TradeDtController {
+class TradeRuleController {
   constructor ($scope, $state, $compile, DTOptionsBuilder, DTColumnBuilder, API) {
     'ngInject'
     this.API = API
     this.$state = $state
 
-      let Dtinforms = this.API.service('dtinforms', this.API.all('informs'))
+      let TradeRules = this.API.service('traderules', this.API.all('informs'))
 
-      Dtinforms.getList()
+      TradeRules.getList()
           .then((response) => {
           let dataSet = response.plain()
 
@@ -33,7 +33,7 @@ class TradeDtController {
 
     let actionsHtml = (data) => {
       return `
-                <a class="btn btn-xs btn-warning" ui-sref="app.tradedtedit({tradedtId: ${data.id}})">
+                <a class="btn btn-xs btn-warning" ui-sref="app.traderuleedit({traderuleId: ${data.id}})">
                     <i class="fa fa-edit"></i>
                 </a>
                 &nbsp
@@ -43,7 +43,7 @@ class TradeDtController {
     }
   }
 
-  delete (tradedtId) {
+  delete (traderuleId) {
    let API = this.API
    let $state = this.$state
 
@@ -58,7 +58,7 @@ class TradeDtController {
      showLoaderOnConfirm: true,
      html: false
    }, function () {
-     API.one('informs').one('dtinforms', tradedtId).remove()
+     API.one('informs').one('traderules', traderuleId).remove()
        .then(() => {
          swal({
            title: '删除!',
@@ -76,9 +76,9 @@ class TradeDtController {
   $onInit () {}
 }
 
-export const TradeDtComponent = {
-  templateUrl: './views/app/components/trade-dt/trade-dt.component.html',
-  controller: TradeDtController,
+export const TradeRuleComponent = {
+  templateUrl: './views/app/components/trade-rule/trade-rule.component.html',
+  controller: TradeRuleController,
   controllerAs: 'vm',
   bindings: {}
 }
