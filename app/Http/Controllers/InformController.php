@@ -27,6 +27,10 @@ class InformController extends Controller
     const teaculture = 3;
     //茶藏品
     const teacollection = 4;
+    //通知公告
+    const tradeannouncement = 5;
+    //交易规则
+    const traderule = 6;
 
     /* 交易动态 start */
     /**
@@ -316,4 +320,151 @@ class InformController extends Controller
         return response()->success('success');
     }
     /* 藏品展示 end */
+
+    /* 信息中心 start */
+    /* 通知公告 start */
+    /**
+     * Get all TeaCultures.
+     *
+     * @return JSON
+     */
+    public function getTradeAnnouncements(){
+        $tradeannouncements = Inform::where('columnId', '=', self::tradeannouncement)->get();
+        return response()->success(compact('tradeannouncements'));
+    }
+
+    /**
+     * Create new TeaCulture.
+     *
+     * @return JSON
+     */
+    public function postTradeAnnouncements()
+    {
+        $tradeannouncement = Inform::create([
+            'title' => Input::get('title'),
+            'content' => Input::get('content'),
+            'columnId' => self::tradeannouncement
+        ]);
+
+        return response()->success(compact('tradeannouncement'));
+    }
+
+    /**
+     * Get system TeaCulture referenced by id.
+     *
+     * @param int TeaCulture ID
+     *
+     * @return JSON
+     */
+    public function getTradeAnnouncementsShow($id)
+    {
+        $tradeannouncement = Inform::find($id);
+
+        return response()->success($tradeannouncement);
+    }
+
+    /**
+     * Update system TeaCulture.
+     *
+     * @return JSON
+     */
+    public function putTradeAnnouncementsShow()
+    {
+        $tradeannouncementForm = Input::get('data');
+        $affectedRows = Inform::where('id', '=', intval($tradeannouncementForm['id']))->update($tradeannouncementForm);
+        if($affectedRows>0){
+            return response()->success($tradeannouncementForm);
+        }else{
+            return response()->error($tradeannouncementForm);
+        }
+    }
+
+    /**
+     * Delete system TeaCulture referenced by id.
+     *
+     * @param int TeaCulture ID
+     *
+     * @return JSON
+     */
+    public function deleteTradeAnnouncements($id)
+    {
+        Inform::destroy($id);
+
+        return response()->success('success');
+    }
+    /* 通知公告 end */
+
+    /* 通知公告 start */
+    /**
+     * Get all TeaCultures.
+     *
+     * @return JSON
+     */
+    public function getTradeRules(){
+        $traderules = Inform::where('columnId', '=', self::tradeannouncement)->get();
+        return response()->success(compact('traderules'));
+    }
+
+    /**
+     * Create new TeaCulture.
+     *
+     * @return JSON
+     */
+    public function postTradeRules()
+    {
+        $traderule = Inform::create([
+            'title' => Input::get('title'),
+            'content' => Input::get('content'),
+            'columnId' => self::tradeannouncement
+        ]);
+
+        return response()->success(compact('$traderule'));
+    }
+
+    /**
+     * Get system TeaCulture referenced by id.
+     *
+     * @param int TeaCulture ID
+     *
+     * @return JSON
+     */
+    public function getTradeRulesShow($id)
+    {
+        $traderule = Inform::find($id);
+
+        return response()->success($traderule);
+    }
+
+    /**
+     * Update system TeaCulture.
+     *
+     * @return JSON
+     */
+    public function putTradeRulesShow()
+    {
+        $traderuleForm = Input::get('data');
+        $affectedRows = Inform::where('id', '=', intval($traderuleForm['id']))->update($traderuleForm);
+        if($affectedRows>0){
+            return response()->success($traderuleForm);
+        }else{
+            return response()->error($traderuleForm);
+        }
+    }
+
+    /**
+     * Delete system TeaCulture referenced by id.
+     *
+     * @param int TeaCulture ID
+     *
+     * @return JSON
+     */
+    public function deleteTradeRules($id)
+    {
+        Inform::destroy($id);
+
+        return response()->success('success');
+    }
+    /* 通知公告 end */
+
+    /* 信息中心 end */
 }

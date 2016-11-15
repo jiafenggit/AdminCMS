@@ -65,6 +65,18 @@ $api->group(['middleware' => ['api', 'api.auth', 'role:admin.inform|admin.dtinfo
     $api->put('/informs/teacollections-show', 'InformController@putTeaCollectionsShow');
     $api->delete('/informs/teacollections/{teacollectionId}', 'InformController@deleteTeaCollections');
 
+    $api->get('/informs/tradeannouncements', 'InformController@getTradeAnnouncements');
+    $api->post('/informs/tradeannouncements', 'InformController@postTradeAnnouncements');
+    $api->get('/informs/tradeannouncements-show/{tradeannouncementId}', 'InformController@getTradeAnnouncementsShow');
+    $api->put('/informs/tradeannouncements-show', 'InformController@putTradeAnnouncementsShow');
+    $api->delete('/informs/tradeannouncements/{tradeannouncementId}', 'InformController@deleteTradeAnnouncements');
+
+    $api->get('/informs/traderules', 'InformController@getTradeRules');
+    $api->post('/informs/traderules', 'InformController@postTradeRules');
+    $api->get('/informs/traderules-show/{traderuleId}', 'InformController@getTradeRulesShow');
+    $api->put('/informs/traderules-show', 'InformController@putTradeRulesShow');
+    $api->delete('/informs/traderules/{traderuleId}', 'InformController@deleteTradeRules');
+
 });
 
 

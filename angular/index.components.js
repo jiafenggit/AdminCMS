@@ -30,15 +30,26 @@ import { RegisterFormComponent } from './app/components/register-form/register-f
 import { TradeDtComponent } from './app/components/trade-dt/trade-dt.component'
 import { TradeDtAddComponent } from './app/components/trade-dt-add/trade-dt-add.component'
 import { TradeDtEditComponent } from './app/components/trade-dt-edit/trade-dt-edit.component'
+
 import { TeaCultureComponent } from './app/components/tea-culture/tea-culture.component'
 import { TeaCultureAddComponent } from './app/components/tea-culture-add/tea-culture-add.component'
 import { TeaCultureEditComponent } from './app/components/tea-culture-edit/tea-culture-edit.component'
+
 import { TeaKnowledgeComponent } from './app/components/tea-knowledge/tea-knowledge.component'
 import { TeaKnowledgeAddComponent } from './app/components/tea-knowledge-add/tea-knowledge-add.component'
 import { TeaKnowledgeEditComponent } from './app/components/tea-knowledge-edit/tea-knowledge-edit.component'
+
 import { TeaCollectionComponent } from './app/components/tea-collection/tea-collection.component'
 import { TeaCollectionAddComponent } from './app/components/tea-collection-add/tea-collection-add.component'
 import { TeaCollectionEditComponent } from './app/components/tea-collection-edit/tea-collection-edit.component'
+
+import { TradeAnnouncementComponent } from './app/components/trade-announcement/trade-announcement.component'
+import { TradeAnnouncementAddComponent } from './app/components/trade-announcement-add/trade-announcement-add.component'
+import { TradeAnnouncementEditComponent } from './app/components/trade-announcement-edit/trade-announcement-edit.component'
+
+import { TradeRuleComponent } from './app/components/trade-rule/trade-rule.component'
+import { TradeRuleAddComponent } from './app/components/trade-rule-add/trade-rule-add.component'
+import { TradeRuleEditComponent } from './app/components/trade-rule-edit/trade-rule-edit.component'
 
 angular.module('app.components')
     .component('tablesSimple', TablesSimpleComponent)
@@ -70,16 +81,26 @@ angular.module('app.components')
     .component('loginForm', LoginFormComponent)
     .component('registerForm', RegisterFormComponent)
 
-
     .component('tradeDt', TradeDtComponent)
     .component('tradeDtAdd', TradeDtAddComponent)
     .component('tradeDtEdit', TradeDtEditComponent)
+
     .component('teaCulture', TeaCultureComponent)
     .component('teaCultureAdd', TeaCultureAddComponent)
     .component('teaCultureEdit', TeaCultureEditComponent)
+
     .component('teaKnowledge', TeaKnowledgeComponent)
     .component('teaKnowledgeAdd', TeaKnowledgeAddComponent)
     .component('teaKnowledgeEdit', TeaKnowledgeEditComponent)
+
     .component('teaCollection', TeaCollectionComponent)
     .component('teaCollectionAdd', TeaCollectionAddComponent)
     .component('teaCollectionEdit', TeaCollectionEditComponent)
+
+    .component('tradeAnnouncement', TradeAnnouncementComponent)
+    .component('tradeAnnouncementAdd', TradeAnnouncementAddComponent)
+    .component('tradeAnnouncementEdit', TradeAnnouncementEditComponent)
+
+    .component('tradeRule', TradeRuleComponent)
+    .component('tradeRuleAdd', TradeRuleAddComponent)
+    .component('tradeRuleEdit', TradeRuleEditComponent)

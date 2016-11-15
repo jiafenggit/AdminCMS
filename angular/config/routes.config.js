@@ -520,4 +520,78 @@ export function RoutesConfig ($stateProvider, $urlRouterProvider) {
         teacollectionId: null
       }
     })
+      .state('app.tradeannouncements', {
+        url: '/trade-announcement',
+        data: {
+          auth: true
+        },
+        views: {
+          'main@app': {
+            template: '<trade-announcement></trade-announcement>'
+          }
+        }
+      })
+      .state('app.tradeannouncementadd', {
+        url: '/trade-announcement-add',
+        data: {
+          auth: true
+        },
+        views: {
+          'main@app': {
+            template: '<trade-announcement-add></trade-announcement-add>'
+          }
+        }
+      })
+      .state('app.tradeannouncementedit', {
+        url: '/trade-announcement-edit/:tradeannouncementId',
+        data: {
+          auth: true
+        },
+        views: {
+          'main@app': {
+            template: '<trade-announcement-edit></trade-announcement-edit>'
+          }
+        },
+        params: {
+          alerts: null,
+          tradeannouncementId: null
+        }
+      })
+      .state('app.traderules', {
+        url: '/trade-rule',
+        data: {
+          auth: true
+        },
+        views: {
+          'main@app': {
+            template: '<trade-rule></trade-rule>'
+          }
+        }
+      })
+      .state('app.traderuleadd', {
+        url: '/trade-rule-add',
+        data: {
+          auth: true
+        },
+        views: {
+          'main@app': {
+            template: '<trade-rule-add></trade-rule-add>'
+          }
+        }
+      })
+      .state('app.traderuleedit', {
+        url: '/trade-rule-edit/:traderuleId',
+        data: {
+          auth: true
+        },
+        views: {
+          'main@app': {
+            template: '<trade-rule-edit></trade-rule-edit>'
+          }
+        },
+        params: {
+          alerts: null,
+          traderuleId: null
+        }
+      })
 }

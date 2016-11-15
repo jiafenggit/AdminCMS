@@ -27,7 +27,7 @@ class TradeAnnouncementAddController {
         'title': this.title,
         'content': this.content
       }).then(() => {
-        let alert = { type: 'success', 'title': 'Success!', msg: '成功添加了一条茶知识.' }
+        let alert = { type: 'success', 'title': 'Success!', msg: '成功添加了一条通知公告.' }
         // $state.go($state.current, { alerts: alert})
         this.alerts.push(alert);
     }, (response) => {

@@ -30,7 +30,7 @@ class TradeAnnouncementEditController {
       let $state = this.$state
       this.tradeannouncement.put()
           .then(() => {
-        let alert = { type: 'success', 'title': 'Success!', msg: '一条茶知识修改好了.' }
+        let alert = { type: 'success', 'title': 'Success!', msg: '一条通知公告修改好了.' }
         $state.go($state.current, { alerts: alert})
     }, (response) => {
         let alert = { type: 'error', 'title': 'Error!', msg: response.data.message }

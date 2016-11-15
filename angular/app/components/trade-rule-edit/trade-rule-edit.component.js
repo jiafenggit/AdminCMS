@@ -30,7 +30,7 @@ class TradeRuleEditController {
       let $state = this.$state
       this.traderule.put()
           .then(() => {
-        let alert = { type: 'success', 'title': 'Success!', msg: '一条交易动态修改好了.' }
+        let alert = { type: 'success', 'title': 'Success!', msg: '一条交易规则修改好了.' }
         $state.go($state.current, { alerts: alert})
     }, (response) => {
         let alert = { type: 'error', 'title': 'Error!', msg: response.data.message }
