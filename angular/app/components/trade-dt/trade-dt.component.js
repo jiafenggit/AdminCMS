@@ -4,7 +4,6 @@ class TradeDtController {
     this.API = API
     this.$state = $state
 
-      //let Permissions = this.API.service('dtinforms', this.API.all('informs'))
       let Dtinforms = this.API.service('dtinforms', this.API.all('informs'))
 
       Dtinforms.getList()
@@ -20,7 +19,7 @@ class TradeDtController {
         this.dtColumns = [
           DTColumnBuilder.newColumn('id').withTitle('ID'),
           DTColumnBuilder.newColumn('title').withTitle('Title'),
-          DTColumnBuilder.newColumn('content').withTitle('Content'),
+          // DTColumnBuilder.newColumn('content').withTitle('Content'),
           DTColumnBuilder.newColumn(null).withTitle('Actions').notSortable()
             .renderWith(actionsHtml)
         ]
@@ -34,7 +33,7 @@ class TradeDtController {
 
     let actionsHtml = (data) => {
       return `
-                <a class="btn btn-xs btn-warning" ui-sref="app.userrolesedit({roleId: ${data.id}})">
+                <a class="btn btn-xs btn-warning" ui-sref="app.tradedtedit({tradedtId: ${data.id}})">
                     <i class="fa fa-edit"></i>
                 </a>
                 &nbsp
@@ -44,35 +43,35 @@ class TradeDtController {
     }
   }
 
-  //delete (roleId) {
-  //  let API = this.API
-  //  let $state = this.$state
-  //
-  //  swal({
-  //    title: 'Are you sure?',
-  //    text: 'You will not be able to recover this data!',
-  //    type: 'warning',
-  //    showCancelButton: true,
-  //    confirmButtonColor: '#DD6B55',
-  //    confirmButtonText: 'Yes, delete it!',
-  //    closeOnConfirm: false,
-  //    showLoaderOnConfirm: true,
-  //    html: false
-  //  }, function () {
-  //    API.one('users').one('roles', roleId).remove()
-  //      .then(() => {
-  //        swal({
-  //          title: 'Deleted!',
-  //          text: 'User Role has been deleted.',
-  //          type: 'success',
-  //          confirmButtonText: 'OK',
-  //          closeOnConfirm: true
-  //        }, function () {
-  //          $state.reload()
-  //        })
-  //      })
-  //  })
-  //}
+  delete (tradedtId) {
+   let API = this.API
+   let $state = this.$state
+
+   swal({
+     title: '确认是否删除?',
+     text: '删除后将无法恢复!',
+     type: 'warning',
+     showCancelButton: true,
+     confirmButtonColor: '#DD6B55',
+     confirmButtonText: '删除!',
+     closeOnConfirm: false,
+     showLoaderOnConfirm: true,
+     html: false
+   }, function () {
+     API.one('informs').one('dtinforms', tradedtId).remove()
+       .then(() => {
+         swal({
+           title: '删除!',
+           text: '好了,你已经删除掉TA了.',
+           type: 'success',
+           confirmButtonText: 'OK',
+           closeOnConfirm: true
+         }, function () {
+           $state.reload()
+         })
+       })
+   })
+  }
 
   $onInit () {}
 }

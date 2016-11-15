@@ -1,4 +1,4 @@
-class TradeDtEditController {
+class TeaKnowledgeEditController {
   constructor (API, $state, $stateParams, $scope) {
     'ngInject'
 
@@ -17,20 +17,20 @@ class TradeDtEditController {
     if ($stateParams.alerts) {
       this.alerts.push($stateParams.alerts)
     }
-    let tradedtId = $stateParams.tradedtId
-    let Tradedt = API.service('dtinforms-show', API.all('informs'))
-    Tradedt.one(tradedtId).get()
+    let teaknowledgeId = $stateParams.teaknowledgeId
+    let Teaknowledge = API.service('teaknowledges-show', API.all('informs'))
+    Teaknowledge.one(teaknowledgeId).get()
         .then((response) => {
-      this.tradedt = API.copy(response)
+      this.teaknowledge = API.copy(response)
     })
   }
 
   save (isValid) {
     if (isValid) {
       let $state = this.$state
-      this.tradedt.put()
+      this.teaknowledge.put()
           .then(() => {
-        let alert = { type: 'success', 'title': 'Success!', msg: '一条交易动态修改好了.' }
+        let alert = { type: 'success', 'title': 'Success!', msg: '一条茶知识修改好了.' }
         $state.go($state.current, { alerts: alert})
     }, (response) => {
         let alert = { type: 'error', 'title': 'Error!', msg: response.data.message }
@@ -44,9 +44,9 @@ class TradeDtEditController {
   $onInit () {}
 }
 
-export const TradeDtEditComponent = {
-  templateUrl: './views/app/components/trade-dt-edit/trade-dt-edit.component.html',
-  controller: TradeDtEditController,
+export const TeaKnowledgeEditComponent = {
+  templateUrl: './views/app/components/tea-knowledge-edit/tea-knowledge-edit.component.html',
+  controller: TeaKnowledgeEditController,
   controllerAs: 'vm',
   bindings: {}
 }

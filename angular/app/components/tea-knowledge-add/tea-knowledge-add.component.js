@@ -1,4 +1,4 @@
-class TeaCultureAddController {
+class TeaKnowledgeAddController {
   constructor (API, $state, $stateParams, $scope) {
     'ngInject'
     $scope.vm.content = "<h3>在这里输入内容</h3>"
@@ -20,14 +20,14 @@ class TeaCultureAddController {
 
   save (isValid) {
     if (isValid) {
-      let Teacultures = this.API.service('teacultures', this.API.all('informs'))
+      let Teaknowledges = this.API.service('teaknowledges', this.API.all('informs'))
       // let $state = this.$state
 
-      Teacultures.post({
+      Teaknowledges.post({
         'title': this.title,
         'content': this.content
       }).then(() => {
-        let alert = { type: 'success', 'title': 'Success!', msg: '成功添加了一条茶文化.' }
+        let alert = { type: 'success', 'title': 'Success!', msg: '成功添加了一条茶知识.' }
         // $state.go($state.current, { alerts: alert})
         this.alerts.push(alert);
     }, (response) => {
@@ -43,9 +43,9 @@ class TeaCultureAddController {
   $onInit () {}
 }
 
-export const TeaCultureAddComponent = {
-  templateUrl: './views/app/components/tea-culture-add/tea-culture-add.component.html',
-  controller: TeaCultureAddController,
+export const TeaKnowledgeAddComponent = {
+  templateUrl: './views/app/components/tea-knowledge-add/tea-knowledge-add.component.html',
+  controller: TeaKnowledgeAddController,
   controllerAs: 'vm',
   bindings: {}
 }

@@ -1,5 +1,5 @@
 class TeaCultureEditController {
-  constructor (API, $state, $stateParams) {
+  constructor (API, $state, $stateParams, $scope) {
     'ngInject'
 
     this.$state = $state
@@ -7,25 +7,32 @@ class TeaCultureEditController {
     this.API = API
     this.alerts = []
 
+    $scope.froalaOptions = {
+      // placeholder: "Edit Me",
+      heightMin: 300,
+      language: 'zh_cn',
+      imageUploadURL: "upload/imgEditor"
+    }
+
     if ($stateParams.alerts) {
       this.alerts.push($stateParams.alerts)
     }
+    let teacultureId = $stateParams.teacultureId
+    let Teaculture = API.service('teacultures-show', API.all('informs'))
+    Teaculture.one(teacultureId).get()
+        .then((response) => {
+      this.teaculture = API.copy(response)
+    })
   }
 
   save (isValid) {
-    this.$state.go(this.$state.current, {}, { alerts: 'test' })
     if (isValid) {
-      let Roles = this.API.service('roles', this.API.all('users'))
       let $state = this.$state
-
-      Roles.post({
-        'role': this.role,
-        'slug': this.slug,
-        'description': this.description
-      }).then(function () {
-        let alert = { type: 'success', 'title': 'Success!', msg: 'Role has been added.' }
+      this.teaculture.put()
+          .then(() => {
+        let alert = { type: 'success', 'title': 'Success!', msg: '一条茶文化修改好了.' }
         $state.go($state.current, { alerts: alert})
-      }, function (response) {
+    }, (response) => {
         let alert = { type: 'error', 'title': 'Error!', msg: response.data.message }
         $state.go($state.current, { alerts: alert})
       })

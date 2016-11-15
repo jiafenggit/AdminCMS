@@ -1,12 +1,13 @@
-class TeaCultureController {
+class TeaKnowledgeController {
   constructor ($scope, $state, $compile, DTOptionsBuilder, DTColumnBuilder, API) {
     'ngInject'
     this.API = API
     this.$state = $state
 
-    let TeaCultures = this.API.service('teacultures', this.API.all('informs'))
+    // let TeaKnowledges = this.API.service('teakns', this.API.all('users'))
+    let TeaKnowledges = this.API.service('teaknowledges', this.API.all('informs'))
 
-    TeaCultures.getList()
+    TeaKnowledges.getList()
         .then((response) => {
       let dataSet = response.plain()
 
@@ -33,7 +34,7 @@ class TeaCultureController {
 
     let actionsHtml = (data) => {
       return `
-                <a class="btn btn-xs btn-warning" ui-sref="app.teacultureedit({teacultureId: ${data.id}})">
+                <a class="btn btn-xs btn-warning" ui-sref="app.teaknowledgeedit({teaknowledgeId: ${data.id}})">
                     <i class="fa fa-edit"></i>
                 </a>
                 &nbsp
@@ -43,7 +44,7 @@ class TeaCultureController {
     }
   }
 
-  delete (teacultureId) {
+  delete (teaknowledgeId) {
     let API = this.API
     let $state = this.$state
 
@@ -58,7 +59,7 @@ class TeaCultureController {
       showLoaderOnConfirm: true,
       html: false
     }, function () {
-      API.one('informs').one('teacultures', teacultureId).remove()
+      API.one('informs').one('teaknowledges', teaknowledgeId).remove()
           .then(() => {
         swal({
             title: '删除!',
@@ -76,9 +77,9 @@ class TeaCultureController {
   $onInit () {}
 }
 
-export const TeaCultureComponent = {
-  templateUrl: './views/app/components/tea-culture/tea-culture.component.html',
-  controller: TeaCultureController,
+export const TeaKnowledgeComponent = {
+  templateUrl: './views/app/components/tea-knowledge/tea-knowledge.component.html',
+  controller: TeaKnowledgeController,
   controllerAs: 'vm',
   bindings: {}
 }

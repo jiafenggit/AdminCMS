@@ -267,22 +267,6 @@ class UserController extends Controller
         return response()->success(compact('permissions'));
     }
 
-    public function getInforms(){
-//        $newsObj = new News();
-//        $news = $newsObj->getDtNewsLists();
-
-        $informs = Inform::all();
-        return response()->success(compact('informs'));
-    }
-
-    public function getDtinforms(){
-//        $newsObj = new News();
-//        $news = $newsObj->getDtNewsLists();
-
-        $dtinforms = Inform::all();
-        return response()->success(compact('dtinforms'));
-    }
-
     /**
      * Create new system permission.
      *
@@ -339,5 +323,15 @@ class UserController extends Controller
         Permission::destroy($id);
 
         return response()->success('success');
+    }
+
+    public function getTeaKns(){
+        $teaknowledges = Inform::where('columnId', '=', 3)->get();
+        return response()->success(compact('teaknowledges'));
+    }
+
+    public function getTeaCus(){
+        $teacultures = Inform::where('columnId', '=', 2)->get();
+        return response()->success(compact('teacultures'));
     }
 }

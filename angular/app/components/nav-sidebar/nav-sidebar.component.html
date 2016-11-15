@@ -30,16 +30,16 @@
           <i class="fa fa-users"></i> <span>交易中心</span> <i class="fa fa-angle-left pull-right"></i>
         </a>
         <ul class="treeview-menu">
-          <li ng-show="vm.can('manage.informs')" class="active"><a ui-sref='app.tradedt'><i class="fa fa-circle-o"></i> <span>交易动态</span></a></li>
+          <li ng-show="vm.can('manage.informs')" class="active"><a ui-sref='app.tradedts'><i class="fa fa-circle-o"></i> <span>交易动态</span></a></li>
         </ul>
       </li>
-      <li class="treeview" ng-show="vm.can('manage.teacultures') || vm.can('manage.teaknowledges')">
+      <li class="treeview" ng-show="vm.can('manage.teaknowledges') || vm.can('manage.teacultures')">
         <a href="javascript:void(0)">
           <i class="fa fa-users"></i> <span>关于茶</span> <i class="fa fa-angle-left pull-right"></i>
         </a>
         <ul class="treeview-menu">
-          <li ng-show="vm.can('manage.teacultures')" class="active"><a ui-sref='app.teaculture'><i class="fa fa-circle-o"></i> <span>茶知识</span></a></li>
-          <li ng-show="vm.can('manage.teaknowledges')" class="active"><a ui-sref='app.teaknowledge'><i class="fa fa-circle-o"></i> <span>茶文化</span></a></li>
+          <li ng-show="vm.can('manage.teaknowledges')" class="active"><a ui-sref='app.teaknowledges'><i class="fa fa-circle-o"></i> <span>茶知识</span></a></li>
+          <li ng-show="vm.can('manage.teacultures')" class="active"><a ui-sref='app.teacultures'><i class="fa fa-circle-o"></i> <span>茶文化</span></a></li>
         </ul>
       </li>
 	  <li class="treeview" ng-show="vm.can('manage.collectionteas')">

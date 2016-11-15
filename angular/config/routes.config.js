@@ -370,7 +370,7 @@ export function RoutesConfig ($stateProvider, $urlRouterProvider) {
       }
     })
 
-    .state('app.tradedt', {
+    .state('app.tradedts', {
       url: '/trade-dt',
       data: {
         auth: true
@@ -393,7 +393,7 @@ export function RoutesConfig ($stateProvider, $urlRouterProvider) {
       }
     })
     .state('app.tradedtedit', {
-      url: '/trade-dt-edit/:tradeId',
+      url: '/trade-dt-edit/:tradedtId',
       data: {
         auth: true
       },
@@ -408,7 +408,7 @@ export function RoutesConfig ($stateProvider, $urlRouterProvider) {
       }
     })
 
-    .state('app.teaculture', {
+    .state('app.teacultures', {
       url: '/tea-culture',
       data: {
         auth: true
@@ -431,7 +431,7 @@ export function RoutesConfig ($stateProvider, $urlRouterProvider) {
       }
     })
     .state('app.teacultureedit', {
-      url: '/tea-culture-edit/:teaId',
+      url: '/tea-culture-edit/:teacultureId',
       data: {
         auth: true
       },
@@ -442,11 +442,11 @@ export function RoutesConfig ($stateProvider, $urlRouterProvider) {
       },
       params: {
         alerts: null,
-        tradeId: null
+        teacultureId: null
       }
     })
 
-    .state('app.teaknowledge', {
+    .state('app.teaknowledges', {
       url: '/tea-knowledge',
       data: {
         auth: true
@@ -469,7 +469,7 @@ export function RoutesConfig ($stateProvider, $urlRouterProvider) {
       }
     })
     .state('app.teaknowledgeedit', {
-      url: '/tea-knowledge-edit/:teaId',
+      url: '/tea-knowledge-edit/:teaknowledgeId',
       data: {
         auth: true
       },
@@ -480,10 +480,10 @@ export function RoutesConfig ($stateProvider, $urlRouterProvider) {
       },
       params: {
         alerts: null,
-        tradeId: null
+        teaknowledgeId: null
       }
     })
-    .state('app.collectiontea', {
+    .state('app.collectionteas', {
       url: '/collection-tea',
       data: {
         auth: true

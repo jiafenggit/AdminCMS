@@ -21,12 +21,11 @@ class TradeDtAddController {
   save (isValid) {
     if (isValid) {
       let Dtinforms = this.API.service('dtinforms', this.API.all('informs'))
-      let $state = this.$state
+      // let $state = this.$state
 
       Dtinforms.post({
         'title': this.title,
-        'content': this.content,
-        'columnId': 1
+        'content': this.content
       }).then(() => {
         let alert = { type: 'success', 'title': 'Success!', msg: '成功添加了一条交易动态.' }
         // $state.go($state.current, { alerts: alert})

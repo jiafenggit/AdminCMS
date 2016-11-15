@@ -38,12 +38,29 @@ $api->group(['middleware' => ['api', 'api.auth']], function ($api) {
     $api->put('users/me', 'UserController@putMe');
 });
 
-$api->group(['middleware' => ['api', 'api.auth', 'role:admin.super|admin.user|admin.inform|admin.dtinform']], function ($api) {
+$api->group(['middleware' => ['api', 'api.auth', 'role:admin.super|admin.user|admin.knowloage']], function ($api) {
     $api->controller('users', 'UserController');
-    $api->controller('informs', 'InformController');
+//    $api->controller('informs', 'InformController');
 //    $api->controller('uploads', 'UploadController');//@imgEditor
+    //|admin.inform|admin.dtinform|admin.knowloage|admin.teaculture
 });
 
+$api->group(['middleware' => ['api', 'api.auth', 'role:admin.inform|admin.dtinform|admin.knowloage|admin.teaculture']], function ($api) {
+    $api->controller('informs', 'InformController');
+
+    $api->get('/informs/teaknowledges', 'InformController@getTeaKnowledges');
+    $api->post('/informs/teaknowledges', 'InformController@postTeaKnowledges');
+    $api->get('/informs/teaknowledges-show/{teaknowledgeId}', 'InformController@getTeaKnowledgesShow');
+    $api->put('/informs/teaknowledges-show', 'InformController@putTeaknowledgesShow');
+
+    $api->get('/informs/teacultures', 'InformController@getTeaCultures');
+    $api->post('/informs/teacultures', 'InformController@postTeaCultures');
+    $api->get('/informs/teacultures-show/{teacultureId}', 'InformController@getTeaCulturesShow');
+    $api->put('/informs/teacultures-show', 'InformController@putTeaCulturesShow');
+    $api->delete('/informs/teacultures/{teacultureId}', 'InformController@deleteTeaCultures');
+//    http://admin.zdmc181.dev/api/informs/teacultures/109
+
+});
 
 
 Route::group(['middleware' => ['upload']], function () {
