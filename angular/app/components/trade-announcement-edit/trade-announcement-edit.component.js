@@ -19,7 +19,7 @@ class TradeAnnouncementEditController {
     }
     let tradeannouncementId = $stateParams.tradeannouncementId
     let TradeAnnouncement = API.service('tradeannouncements-show', API.all('informs'))
-    TradeAnnouncement.one(teaknowledgeId).get()
+    TradeAnnouncement.one(tradeannouncementId).get()
         .then((response) => {
       this.tradeannouncement = API.copy(response)
     })

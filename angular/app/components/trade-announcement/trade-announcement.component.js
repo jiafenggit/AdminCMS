@@ -78,7 +78,7 @@ class TradeAnnouncementController {
 }
 
 export const TradeAnnouncementComponent = {
-  templateUrl: './views/app/components/tea-knowledge/tea-knowledge.component.html',
+  templateUrl: './views/app/components/trade-announcement/trade-announcement.component.html',
   controller: TradeAnnouncementController,
   controllerAs: 'vm',
   bindings: {}
