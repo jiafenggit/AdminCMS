@@ -42,20 +42,20 @@
           <li ng-show="vm.can('manage.teacultures')" class="active"><a ui-sref='app.teacultures'><i class="fa fa-circle-o"></i> <span>茶文化</span></a></li>
         </ul>
       </li>
-	  <li class="treeview" ng-show="vm.can('manage.collectionteas')">
+	  <li class="treeview" ng-show="vm.can('manage.teacollections')">
         <a href="javascript:void(0)">
           <i class="fa fa-users"></i> <span>藏品展示</span> <i class="fa fa-angle-left pull-right"></i>
         </a>
         <ul class="treeview-menu">
-          <li ng-show="vm.can('manage.collectionteas')" class="active"><a ui-sref='app.collectiontea'><i class="fa fa-circle-o"></i> <span>藏品展示</span></a></li>
+          <li ng-show="vm.can('manage.teacollections')" class="active"><a ui-sref='app.teacollections'><i class="fa fa-circle-o"></i> <span>藏品展示</span></a></li>
         </ul>
       </li>
-      <li class="treeview" ng-show="vm.can('manage.announcements') || vm.can('manage.traderules')">
+      <li class="treeview" ng-show="vm.can('manage.tradeannouncements') || vm.can('manage.traderules')">
         <a href="javascript:void(0)">
           <i class="fa fa-users"></i> <span>信息中心</span> <i class="fa fa-angle-left pull-right"></i>
         </a>
         <ul class="treeview-menu">
-          <li ng-show="vm.can('manage.announcements')" class="active"><a ui-sref='app.announcement'><i class="fa fa-circle-o"></i> <span>通知公告</span></a></li>
+          <li ng-show="vm.can('manage.tradeannouncements')" class="active"><a ui-sref='app.tradeannouncement'><i class="fa fa-circle-o"></i> <span>通知公告</span></a></li>
           <li ng-show="vm.can('manage.traderules')" class="active"><a ui-sref='app.traderule'><i class="fa fa-circle-o"></i> <span>交易规则</span></a></li>
         </ul>
       </li>

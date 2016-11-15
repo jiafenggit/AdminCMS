@@ -58,7 +58,8 @@ $api->group(['middleware' => ['api', 'api.auth', 'role:admin.inform|admin.dtinfo
     $api->get('/informs/teacultures-show/{teacultureId}', 'InformController@getTeaCulturesShow');
     $api->put('/informs/teacultures-show', 'InformController@putTeaCulturesShow');
     $api->delete('/informs/teacultures/{teacultureId}', 'InformController@deleteTeaCultures');
-//    http://admin.zdmc181.dev/api/informs/teacultures/109
+
+
 
 });
 
