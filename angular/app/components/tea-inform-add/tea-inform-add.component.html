@@ -2,7 +2,7 @@
   <h1>关于茶 <small>茶知识</small></h1>
   <ol class="breadcrumb">
     <li><a ui-sref="app.landing"><i class="fa fa-dashboard"></i> Home</a></li>
-    <li><a ui-sref="app.teaknowledges">茶知识</a></li>
+    <li><a ui-sref="app.teainforms">茶知识</a></li>
     <li class="active">添加茶知识</li>
   </ol>
 </section>
@@ -13,29 +13,29 @@
         <div class="box-header with-border">
           <h3 class="box-title">添加茶知识</h3>
         </div>
-        <form class="form-horizontal" name="teaknowledgeForm" ng-submit="vm.save(teaknowledgeForm.$valid, teaknowledgeForm)" novalidate>
+        <form class="form-horizontal" name="teainformForm" ng-submit="vm.save(teainformForm.$valid, teainformForm)" novalidate>
           <div class="box-body">
             <div ng-if="vm.alerts" class="alert alert-{{alert.type}}" ng-repeat="alert in vm.alerts">
               <h4>{{alert.title}}</h4>
               <p>{{alert.msg}}</p>
             </div>
-            <div class="form-group" ng-class="{ 'has-error': teaknowledgeForm.title.$invalid && ( vm.formSubmitted || teaknowledgeForm.title.$touched) }">
+            <div class="form-group" ng-class="{ 'has-error': teainformForm.title.$invalid && ( vm.formSubmitted || teainformForm.title.$touched) }">
               <label for="inputEmail3" class="col-sm-2 control-label">标题</label>
               <div class="col-sm-10">
                 <input type="text" class="form-control" ng-model="vm.title" name="title" placeholder="标题" required>
-                <p ng-show="teaknowledgeForm.title.$error.required && ( vm.formSubmitted || teaknowledgeForm.title.$touched)" class="help-block">标题 is required.</p>
+                <p ng-show="teainformForm.title.$error.required && ( vm.formSubmitted || teainformForm.title.$touched)" class="help-block">标题 is required.</p>
               </div>
             </div>
-            <div class="form-group" ng-class="{ 'has-error': teaknowledgeForm.content.$invalid && ( vm.formSubmitted || teaknowledgeForm.content.$touched) }">
+            <div class="form-group" ng-class="{ 'has-error': teainformForm.content.$invalid && ( vm.formSubmitted || teainformForm.content.$touched) }">
               <label for="inputPassword3" class="col-sm-2 control-label">内容</label>
               <div class="col-sm-10">
                 <textarea froala="froalaOptions" class="form-control" ng-model="vm.content" name="content" placeholder="内容" required></textarea>
-                <p ng-show="teaknowledgeForm.content.$error.required && ( vm.formSubmitted || teaknowledgeForm.content.$touched)" class="help-block">内容 is required.</p>
+                <p ng-show="teainformForm.content.$error.required && ( vm.formSubmitted || teainformForm.content.$touched)" class="help-block">内容 is required.</p>
               </div>
             </div>
           </div>
           <div class="box-footer">
-            <a ui-sref="app.teaknowledges" class="btn btn-default"><i class="fa fa-angle-double-left"></i> Back</a>
+            <a ui-sref="app.teainforms" class="btn btn-default"><i class="fa fa-angle-double-left"></i> Back</a>
             <button type="submit" class="btn btn-primary pull-right">Add New</button>
           </div>
         </form>

@@ -1,4 +1,4 @@
-class TeaKnowledgeAddController {
+class IndustryInformAddController {
   constructor (API, $state, $stateParams, $scope) {
     'ngInject'
     $scope.vm.content = "<h3>在这里输入内容</h3>"
@@ -20,7 +20,7 @@ class TeaKnowledgeAddController {
 
   save (isValid) {
     if (isValid) {
-      let Teaknowledges = this.API.service('teaknowledges', this.API.all('informs'))
+      let Teaknowledges = this.API.service('industryinforms', this.API.all('informs'))
       // let $state = this.$state
 
       Teaknowledges.post({
@@ -43,9 +43,9 @@ class TeaKnowledgeAddController {
   $onInit () {}
 }
 
-export const TeaKnowledgeAddComponent = {
-  templateUrl: './views/app/components/tea-knowledge-add/tea-knowledge-add.component.html',
-  controller: TeaKnowledgeAddController,
+export const IndustryInformAddComponent = {
+  templateUrl: './views/app/components/industry-inform-add/industry-inform-add.component.html',
+  controller: IndustryInformAddController,
   controllerAs: 'vm',
   bindings: {}
 }

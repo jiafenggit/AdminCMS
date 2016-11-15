@@ -1,4 +1,4 @@
-class TeaKnowledgeEditController {
+class TeaInformEditController {
   constructor (API, $state, $stateParams, $scope) {
     'ngInject'
 
@@ -17,18 +17,18 @@ class TeaKnowledgeEditController {
     if ($stateParams.alerts) {
       this.alerts.push($stateParams.alerts)
     }
-    let teaknowledgeId = $stateParams.teaknowledgeId
-    let Teaknowledge = API.service('teaknowledges-show', API.all('informs'))
-    Teaknowledge.one(teaknowledgeId).get()
+    let teainformId = $stateParams.teainformId
+    let TeaInform = API.service('teainforms-show', API.all('informs'))
+    TeaInform.one(teainformId).get()
         .then((response) => {
-      this.teaknowledge = API.copy(response)
+      this.teainform = API.copy(response)
     })
   }
 
   save (isValid) {
     if (isValid) {
       let $state = this.$state
-      this.teaknowledge.put()
+      this.teainform.put()
           .then(() => {
         let alert = { type: 'success', 'title': 'Success!', msg: '一条茶知识修改好了.' }
         $state.go($state.current, { alerts: alert})
@@ -44,9 +44,9 @@ class TeaKnowledgeEditController {
   $onInit () {}
 }
 
-export const TeaKnowledgeEditComponent = {
-  templateUrl: './views/app/components/tea-knowledge-edit/tea-knowledge-edit.component.html',
-  controller: TeaKnowledgeEditController,
+export const TeaInformEditComponent = {
+  templateUrl: './views/app/components/tea-inform-edit/tea-inform-edit.component.html',
+  controller: TeaInformEditController,
   controllerAs: 'vm',
   bindings: {}
 }

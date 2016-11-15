@@ -1,13 +1,13 @@
-class TeaKnowledgeController {
+class IndustryInformController {
   constructor ($scope, $state, $compile, DTOptionsBuilder, DTColumnBuilder, API) {
     'ngInject'
     this.API = API
     this.$state = $state
 
-    // let TeaKnowledges = this.API.service('teakns', this.API.all('users'))
-    let TeaKnowledges = this.API.service('teaknowledges', this.API.all('informs'))
+    // let IndustryInforms = this.API.service('teakns', this.API.all('users'))
+    let IndustryInforms = this.API.service('industryinforms', this.API.all('informs'))
 
-    TeaKnowledges.getList()
+    IndustryInforms.getList()
         .then((response) => {
       let dataSet = response.plain()
 
@@ -34,7 +34,7 @@ class TeaKnowledgeController {
 
     let actionsHtml = (data) => {
       return `
-                <a class="btn btn-xs btn-warning" ui-sref="app.teaknowledgeedit({teaknowledgeId: ${data.id}})">
+                <a class="btn btn-xs btn-warning" ui-sref="app.industryinformedit({industryinformId: ${data.id}})">
                     <i class="fa fa-edit"></i>
                 </a>
                 &nbsp
@@ -44,7 +44,7 @@ class TeaKnowledgeController {
     }
   }
 
-  delete (teaknowledgeId) {
+  delete (industryinformId) {
     let API = this.API
     let $state = this.$state
 
@@ -59,7 +59,7 @@ class TeaKnowledgeController {
       showLoaderOnConfirm: true,
       html: false
     }, function () {
-      API.one('informs').one('teaknowledges', teaknowledgeId).remove()
+      API.one('informs').one('industryinforms', industryinformId).remove()
           .then(() => {
         swal({
             title: '删除!',
@@ -77,9 +77,9 @@ class TeaKnowledgeController {
   $onInit () {}
 }
 
-export const TeaKnowledgeComponent = {
-  templateUrl: './views/app/components/tea-knowledge/tea-knowledge.component.html',
-  controller: TeaKnowledgeController,
+export const IndustryInformComponent = {
+  templateUrl: './views/app/components/industry-inform/industry-inform.component.html',
+  controller: IndustryInformController,
   controllerAs: 'vm',
   bindings: {}
 }
