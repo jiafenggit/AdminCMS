@@ -47,41 +47,12 @@ $api->group(['middleware' => ['api', 'api.auth', 'role:admin.super|admin.user|ad
 
 $api->group(['middleware' => ['api', 'api.auth', 'role:admin.inform|admin.dtinform|admin.knowloage|admin.teaculture']], function ($api) {
     $api->controller('informs', 'InformController');
-
-    $api->get('/informs/teaknowledges', 'InformController@getTeaKnowledges');
-    $api->post('/informs/teaknowledges', 'InformController@postTeaKnowledges');
-    $api->get('/informs/teaknowledges-show/{teaknowledgeId}', 'InformController@getTeaKnowledgesShow');
-    $api->put('/informs/teaknowledges-show', 'InformController@putTeaknowledgesShow');
-
-    $api->get('/informs/teacultures', 'InformController@getTeaCultures');
-    $api->post('/informs/teacultures', 'InformController@postTeaCultures');
-    $api->get('/informs/teacultures-show/{teacultureId}', 'InformController@getTeaCulturesShow');
-    $api->put('/informs/teacultures-show', 'InformController@putTeaCulturesShow');
-    $api->delete('/informs/teacultures/{teacultureId}', 'InformController@deleteTeaCultures');
-
-    $api->get('/informs/teacollections', 'InformController@getTeaCollections');
-    $api->post('/informs/teacollections', 'InformController@postTeaCollections');
-    $api->get('/informs/teacollections-show/{teacollectionId}', 'InformController@getTeaCollectionsShow');
-    $api->put('/informs/teacollections-show', 'InformController@putTeaCollectionsShow');
-    $api->delete('/informs/teacollections/{teacollectionId}', 'InformController@deleteTeaCollections');
-
-    $api->get('/informs/tradeannouncements', 'InformController@getTradeAnnouncements');
-    $api->post('/informs/tradeannouncements', 'InformController@postTradeAnnouncements');
-    $api->get('/informs/tradeannouncements-show/{tradeannouncementId}', 'InformController@getTradeAnnouncementsShow');
-    $api->put('/informs/tradeannouncements-show', 'InformController@putTradeAnnouncementsShow');
-    $api->delete('/informs/tradeannouncements/{tradeannouncementId}', 'InformController@deleteTradeAnnouncements');
-
-    $api->get('/informs/traderules', 'InformController@getTradeRules');
-    $api->post('/informs/traderules', 'InformController@postTradeRules');
-    $api->get('/informs/traderules-show/{traderuleId}', 'InformController@getTradeRulesShow');
-    $api->put('/informs/traderules-show', 'InformController@putTradeRulesShow');
-    $api->delete('/informs/traderules/{traderuleId}', 'InformController@deleteTradeRules');
-
 });
 
 
 Route::group(['middleware' => ['upload']], function () {
     //upload
     Route::post('/upload/imgEditor', 'UploadController@imgEditor');
+    Route::post('/upload/imgUpload', 'UploadController@imgUpload');
 //    http://admin.zdmc181.dev/upload/ImgEditor
 });

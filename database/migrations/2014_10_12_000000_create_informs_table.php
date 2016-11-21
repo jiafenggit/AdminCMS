@@ -19,6 +19,7 @@ class CreateInformsTable extends Migration
             $table->integer('columnId');
             $table->integer('level')->default(1);
             $table->integer('reveal')->default(1);
+            $table->string('img');
             $table->timestamps();
         });
     }

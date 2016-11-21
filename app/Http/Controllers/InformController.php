@@ -111,7 +111,7 @@ class InformController extends Controller
      *
      * @return JSON
      */
-    public function getTeaKnowledges(){
+    public function getTeaknowledges(){
         $teaknowledges = Inform::where('columnId', '=', self::teaknowledge)->get();
         return response()->success(compact('teaknowledges'));
     }
@@ -121,7 +121,7 @@ class InformController extends Controller
      *
      * @return JSON
      */
-    public function postTeaKnowledges()
+    public function postTeaknowledges()
     {
         $teaknowledge = Inform::create([
             'title' => Input::get('title'),
@@ -139,7 +139,7 @@ class InformController extends Controller
      *
      * @return JSON
      */
-    public function getTeaKnowledgesShow($id)
+    public function getTeaknowledgesShow($id)
     {
         $teaknowledge = Inform::find($id);
 
@@ -182,7 +182,7 @@ class InformController extends Controller
      *
      * @return JSON
      */
-    public function getTeaCultures(){
+    public function getTeacultures(){
         $teacultures = Inform::where('columnId', '=', self::teaculture)->get();
         return response()->success(compact('teacultures'));
     }
@@ -192,7 +192,7 @@ class InformController extends Controller
      *
      * @return JSON
      */
-    public function postTeaCultures()
+    public function postTeacultures()
     {
         $teaculture = Inform::create([
             'title' => Input::get('title'),
@@ -210,7 +210,7 @@ class InformController extends Controller
      *
      * @return JSON
      */
-    public function getTeaCulturesShow($id)
+    public function getTeaculturesShow($id)
     {
         $teaculture = Inform::find($id);
 
@@ -222,7 +222,7 @@ class InformController extends Controller
      *
      * @return JSON
      */
-    public function putTeaCulturesShow()
+    public function putTeaculturesShow()
     {
         $teacultureForm = Input::get('data');
         $affectedRows = Inform::where('id', '=', intval($teacultureForm['id']))->update($teacultureForm);
@@ -240,7 +240,7 @@ class InformController extends Controller
      *
      * @return JSON
      */
-    public function deleteTeaCultures($id)
+    public function deleteTeacultures($id)
     {
         Inform::destroy($id);
 
@@ -255,7 +255,7 @@ class InformController extends Controller
      *
      * @return JSON
      */
-    public function getTeaCollections(){
+    public function getTeacollections(){
         $teacollections = Inform::where('columnId', '=', 4)->get();
         return response()->success(compact('teacollections'));
     }
@@ -265,7 +265,7 @@ class InformController extends Controller
      *
      * @return JSON
      */
-    public function postTeaCollections()
+    public function postTeacollections()
     {
         $teacollection = Inform::create([
             'title' => Input::get('title'),
@@ -283,7 +283,7 @@ class InformController extends Controller
      *
      * @return JSON
      */
-    public function getTeaCollectionsShow($id)
+    public function getTeacollectionsShow($id)
     {
         $teacollection = Inform::find($id);
 
@@ -295,7 +295,7 @@ class InformController extends Controller
      *
      * @return JSON
      */
-    public function putTeaCollectionsShow()
+    public function putTeacollectionsShow()
     {
         $teacollectionForm = Input::get('data');
         $affectedRows = Inform::where('id', '=', intval($teacollectionForm['id']))->update($teacollectionForm);
@@ -313,7 +313,7 @@ class InformController extends Controller
      *
      * @return JSON
      */
-    public function deleteTeaCollections($id)
+    public function deleteTeacollections($id)
     {
         Inform::destroy($id);
 
@@ -328,7 +328,7 @@ class InformController extends Controller
      *
      * @return JSON
      */
-    public function getTradeAnnouncements(){
+    public function getTradeannouncements(){
         $tradeannouncements = Inform::where('columnId', '=', self::tradeannouncement)->get();
         return response()->success(compact('tradeannouncements'));
     }
@@ -338,7 +338,7 @@ class InformController extends Controller
      *
      * @return JSON
      */
-    public function postTradeAnnouncements()
+    public function postTradeannouncements()
     {
         $tradeannouncement = Inform::create([
             'title' => Input::get('title'),
@@ -356,7 +356,7 @@ class InformController extends Controller
      *
      * @return JSON
      */
-    public function getTradeAnnouncementsShow($id)
+    public function getTradeannouncementsShow($id)
     {
         $tradeannouncement = Inform::find($id);
 
@@ -368,7 +368,7 @@ class InformController extends Controller
      *
      * @return JSON
      */
-    public function putTradeAnnouncementsShow()
+    public function putTradeannouncementsShow()
     {
         $tradeannouncementForm = Input::get('data');
         $affectedRows = Inform::where('id', '=', intval($tradeannouncementForm['id']))->update($tradeannouncementForm);
@@ -386,7 +386,7 @@ class InformController extends Controller
      *
      * @return JSON
      */
-    public function deleteTradeAnnouncements($id)
+    public function deleteTradeannouncements($id)
     {
         Inform::destroy($id);
 
@@ -400,7 +400,7 @@ class InformController extends Controller
      *
      * @return JSON
      */
-    public function getTradeRules(){
+    public function getTraderules(){
         $traderules = Inform::where('columnId', '=', self::tradeannouncement)->get();
         return response()->success(compact('traderules'));
     }
@@ -410,7 +410,7 @@ class InformController extends Controller
      *
      * @return JSON
      */
-    public function postTradeRules()
+    public function postTraderules()
     {
         $traderule = Inform::create([
             'title' => Input::get('title'),
@@ -428,7 +428,7 @@ class InformController extends Controller
      *
      * @return JSON
      */
-    public function getTradeRulesShow($id)
+    public function getTraderulesShow($id)
     {
         $traderule = Inform::find($id);
 
@@ -440,7 +440,7 @@ class InformController extends Controller
      *
      * @return JSON
      */
-    public function putTradeRulesShow()
+    public function putTraderulesShow()
     {
         $traderuleForm = Input::get('data');
         $affectedRows = Inform::where('id', '=', intval($traderuleForm['id']))->update($traderuleForm);
@@ -458,7 +458,7 @@ class InformController extends Controller
      *
      * @return JSON
      */
-    public function deleteTradeRules($id)
+    public function deleteTraderules($id)
     {
         Inform::destroy($id);
 
