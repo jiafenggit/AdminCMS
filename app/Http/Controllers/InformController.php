@@ -256,7 +256,7 @@ class InformController extends Controller
      * @return JSON
      */
     public function getTeacollections(){
-        $teacollections = Inform::where('columnId', '=', 4)->get();
+        $teacollections = Inform::where('columnId', '=', self::teacollection)->get();
         return response()->success(compact('teacollections'));
     }
 
@@ -270,7 +270,7 @@ class InformController extends Controller
         $teacollection = Inform::create([
             'title' => Input::get('title'),
             'content' => Input::get('content'),
-            'columnId' => 4
+            'columnId' => self::teacollection
         ]);
 
         return response()->success(compact('teacollection'));
@@ -305,6 +305,19 @@ class InformController extends Controller
             return response()->error($teacollectionForm);
         }
     }
+    public function putTeacollectionimgsShow()
+    {
+        $teacollectionForm = Input::get('data');
+        dd($teacollectionForm);
+        $affectedRows = Inform::where('id', '=', intval($teacollectionForm['id']))->update($teacollectionForm);
+        if($affectedRows>0){
+            return response()->success($teacollectionForm);
+        }else{
+            return response()->error($teacollectionForm);
+        }
+    }
+
+
 
     /**
      * Delete system TeaCulture referenced by id.
@@ -401,7 +414,7 @@ class InformController extends Controller
      * @return JSON
      */
     public function getTraderules(){
-        $traderules = Inform::where('columnId', '=', self::tradeannouncement)->get();
+        $traderules = Inform::where('columnId', '=', self::traderule)->get();
         return response()->success(compact('traderules'));
     }
 
@@ -415,7 +428,7 @@ class InformController extends Controller
         $traderule = Inform::create([
             'title' => Input::get('title'),
             'content' => Input::get('content'),
-            'columnId' => self::tradeannouncement
+            'columnId' => self::traderule
         ]);
 
         return response()->success(compact('$traderule'));

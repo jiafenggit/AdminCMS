@@ -16,6 +16,8 @@ class TeaCollectionAddController {
     if ($stateParams.alerts) {
       this.alerts.push($stateParams.alerts)
     }
+
+
   }
 
   save (isValid) {

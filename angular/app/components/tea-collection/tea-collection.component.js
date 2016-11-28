@@ -34,6 +34,10 @@ console.log(TeaCollections);
 
     let actionsHtml = (data) => {
       return `
+                <a class="btn btn-xs btn-warning" ui-sref="app.teacollectionimg({teacollectionId: ${data.id}})">
+                    <i class="fa fa-camera-retro"></i>
+                </a>
+                &nbsp
                 <a class="btn btn-xs btn-warning" ui-sref="app.teacollectionedit({teacollectionId: ${data.id}})">
                     <i class="fa fa-edit"></i>
                 </a>

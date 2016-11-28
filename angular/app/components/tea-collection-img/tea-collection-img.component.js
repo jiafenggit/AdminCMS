@@ -1,4 +1,4 @@
-class TeaCollectionEditController {
+class TeaCollectionImgController {
   constructor (API, $state, $stateParams, $scope) {
     'ngInject'
 
@@ -11,9 +11,8 @@ class TeaCollectionEditController {
       // placeholder: "Edit Me",
       heightMin: 300,
       language: 'zh_cn',
-      imageUploadURL: "upload/imgEditor"
+      imageUploadURL: "upload/imgEditor",
     }
-
     if ($stateParams.alerts) {
       this.alerts.push($stateParams.alerts)
     }
@@ -23,12 +22,7 @@ class TeaCollectionEditController {
         .then((response) => {
       this.teacollection = API.copy(response)
     })
-
-
-
   }
-
-
 
   save (isValid) {
     if (isValid) {
@@ -49,9 +43,9 @@ class TeaCollectionEditController {
   $onInit () {}
 }
 
-export const TeaCollectionEditComponent = {
-  templateUrl: './views/app/components/tea-collection-edit/tea-collection-edit.component.html',
-  controller: TeaCollectionEditController,
+export const TeaCollectionImgComponent = {
+  templateUrl: './views/app/components/tea-collection-img/tea-collection-img.component.html',
+  controller: TeaCollectionImgController,
   controllerAs: 'vm',
   bindings: {}
 }

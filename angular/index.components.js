@@ -42,6 +42,7 @@ import { TeaKnowledgeEditComponent } from './app/components/tea-knowledge-edit/t
 import { TeaCollectionComponent } from './app/components/tea-collection/tea-collection.component'
 import { TeaCollectionAddComponent } from './app/components/tea-collection-add/tea-collection-add.component'
 import { TeaCollectionEditComponent } from './app/components/tea-collection-edit/tea-collection-edit.component'
+import { TeaCollectionImgComponent } from './app/components/tea-collection-img/tea-collection-img.component'
 
 import { TradeAnnouncementComponent } from './app/components/trade-announcement/trade-announcement.component'
 import { TradeAnnouncementAddComponent } from './app/components/trade-announcement-add/trade-announcement-add.component'
@@ -96,6 +97,7 @@ angular.module('app.components')
     .component('teaCollection', TeaCollectionComponent)
     .component('teaCollectionAdd', TeaCollectionAddComponent)
     .component('teaCollectionEdit', TeaCollectionEditComponent)
+    .component('teaCollectionImg', TeaCollectionImgComponent)
 
     .component('tradeAnnouncement', TradeAnnouncementComponent)
     .component('tradeAnnouncementAdd', TradeAnnouncementAddComponent)

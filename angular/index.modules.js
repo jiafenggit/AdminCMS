@@ -17,5 +17,9 @@ angular.module('app.components', [
   'ui.router', 'angular-loading-bar',
   'restangular', 'ngStorage', 'satellizer',
   'ui.bootstrap', 'chart.js', 'mm.acl', 'datatables',
-  'datatables.bootstrap', 'checklist-model', 'froala'
+  'datatables.bootstrap', 'checklist-model', 'froala',
 ])
+//'angularFileUpload',
+//'ngFileUpload'
+
+// 'angularFileUpload', 'angular-image-404',
