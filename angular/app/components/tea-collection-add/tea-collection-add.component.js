@@ -27,6 +27,7 @@ class TeaCollectionAddController {
 
       TeaCollections.post({
         'title': this.title,
+        'tcontent': this.tcontent,
         'content': this.content
       }).then(() => {
         let alert = { type: 'success', 'title': 'Success!', msg: '成功添加了一条藏品展示.' }

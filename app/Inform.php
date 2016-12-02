@@ -19,7 +19,7 @@ class Inform extends Model implements RoleHasRelationsContract
      * @var array
      */
     protected $fillable = [
-        'title', 'content', 'columnId'
+        'title', 'content', 'tcontent', 'columnId'
 //id
 //title
 //content

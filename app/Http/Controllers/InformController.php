@@ -270,6 +270,7 @@ class InformController extends Controller
         $teacollection = Inform::create([
             'title' => Input::get('title'),
             'content' => Input::get('content'),
+            'tcontent' => Input::get('tcontent'),
             'columnId' => self::teacollection
         ]);
 
